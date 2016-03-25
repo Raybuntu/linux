@@ -160,12 +160,13 @@ void cec_standby(cec_rx_message_t* pcec_message)
 {
     if(hdmitx_device->cec_func_config & (1 << CEC_FUNC_MSAK)) {
         if(hdmitx_device->cec_func_config & (1 << ONE_TOUCH_STANDBY_MASK)) {
-            hdmi_print(INF, CEC  ": System will be in standby mode\n");
-            input_event(cec_global_info.remote_cec_dev, EV_KEY, KEY_POWER, 1);
-            input_sync(cec_global_info.remote_cec_dev);
-            input_event(cec_global_info.remote_cec_dev, EV_KEY, KEY_POWER, 0);
-            input_sync(cec_global_info.remote_cec_dev);
-            cec_disable_irq();
+            hdmi_print(INF, CEC  ": Standby requested but disabled\n");
+            //hdmi_print(INF, CEC  ": System will be in standby mode\n");
+            //input_event(cec_global_info.remote_cec_dev, EV_KEY, KEY_POWER, 1);
+            //input_sync(cec_global_info.remote_cec_dev);
+            //input_event(cec_global_info.remote_cec_dev, EV_KEY, KEY_POWER, 0);
+            //input_sync(cec_global_info.remote_cec_dev);
+            //cec_disable_irq();
         }
     }
 }
