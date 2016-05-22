@@ -52,7 +52,6 @@ struct m88ds3103_platform_data {
 #define M88DS3103_TS_SERIAL_D7          1 /* TS output pin D7 */
 #define M88DS3103_TS_PARALLEL           2 /* TS Parallel mode */
 #define M88DS3103_TS_CI                 3 /* TS CI Mode */
-#define M88DS3103_TS_PARALLEL_16        4 /*  16 MHz */
 	u8 ts_mode:2;
 	u32 ts_clk;
 	u8 ts_clk_pol:1;
