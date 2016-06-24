@@ -1449,6 +1449,8 @@ static struct class_attribute aocec_class_attr[] = {
 /******************** cec hal interface ***************************/
 static int hdmitx_cec_open(struct inode *inode, struct file *file)
 {
+    wait_event_interruptible(cec_dev->tx_dev->hdmi_info.vsdb_phy_addr.waitq,
+            cec_dev->tx_dev->hdmi_info.vsdb_phy_addr.valid == 1);
     cec_dev->cec_info.open_count++;
     if (cec_dev->cec_info.open_count) {
         cec_dev->cec_info.hal_ctl = 1;
