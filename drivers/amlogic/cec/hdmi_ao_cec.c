@@ -65,7 +65,7 @@ static struct early_suspend aocec_suspend_handler;
 
 
 #define CEC_FRAME_DELAY     msecs_to_jiffies(400)
-#define CEC_DEV_NAME        "cec"
+#define CEC_DEV_NAME        "aocec"
 
 #define DEV_TYPE_TX     4
 #define DEV_TYPE_RX     0
